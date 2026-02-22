@@ -8,13 +8,28 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Dione OS" />
   <meta name="description" content="Dione OS – Field Notes Edition. A structured field journal system." />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="apple-touch-icon" href="icons/icon-192.png" />
-  <link rel="icon" type="image/png" href="icons/icon-192.png" />
+  <link rel="manifest" href="./manifest.json" />
+  <!-- GitHub Pages SPA redirect receiver (pairs with 404.html) -->
+  <script>
+    (function (l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
+          return s.replace(/~and~/g, '&');
+        });
+        window.history.replaceState(
+          null, null,
+          l.pathname.slice(0, -1) + decoded[0] +
+          (decoded[1] ? '?' + decoded[1] : '') + l.hash
+        );
+      }
+    }(window.location));
+  </script>
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="icon" type="image/png" href="./icons/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
   <title>Dione OS – Field Notes</title>
 </head>
 <body>
@@ -350,7 +365,7 @@
     <div class="focus-word-count" id="focus-word-count">0 words</div>
   </div>
 
-  <script src="db.js"></script>
-  <script src="app.js"></script>
+  <script src="./db.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>

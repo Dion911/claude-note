@@ -1166,8 +1166,10 @@ const UIBackup = (() => {
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
+      // Use a relative path so this works on GitHub Pages subdirectories,
+      // Netlify, Vercel, and localhost equally — never an absolute '/service-worker.js'
       navigator.serviceWorker
-        .register('/service-worker.js')
+        .register('./service-worker.js')
         .then((reg) => console.log('[SW] Registered, scope:', reg.scope))
         .catch((err) => console.warn('[SW] Registration failed:', err));
     });

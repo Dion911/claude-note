@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dione OS</title>
+  <script>
+    /**
+     * GitHub Pages SPA 404 redirect.
+     *
+     * When GitHub Pages gets a request for a path it doesn't have a file for
+     * (e.g. /dione-os/some-deep-link), it serves this 404.html instead.
+     * We immediately redirect back to index.html, preserving the path
+     * as a query param so the app can restore state if needed.
+     *
+     * Technique from: https://github.com/rafgraph/spa-github-pages
+     */
+    (function () {
+      var segmentCount = 1; // Number of path segments in the repo name on GH Pages
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    })();
+  </script>
+</head>
+<body>
+  <p style="font-family:sans-serif;color:#8C8175;padding:32px">Redirecting to Dione OS…</p>
+</body>
+</html>
