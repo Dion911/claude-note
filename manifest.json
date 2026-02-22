@@ -1,0 +1,37 @@
+{
+  "name": "Dione OS – Field Notes Edition",
+  "short_name": "Dione OS",
+  "description": "A structured but flexible field journal system. Local-first, offline-capable.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F5F2ED",
+  "theme_color": "#F5F2ED",
+  "lang": "en",
+  "categories": ["productivity", "lifestyle"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "New Entry",
+      "short_name": "Capture",
+      "description": "Quick capture a new entry",
+      "url": "/?action=capture",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
